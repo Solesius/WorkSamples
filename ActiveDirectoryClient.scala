@@ -1,5 +1,6 @@
-import org.apache.directory.ldap.client.api.LdapNetworkConnection
 //TODO cleanup imports
+
+import org.apache.directory.ldap.client.api.LdapNetworkConnection
 import org.apache.directory.api.ldap.model.exception.LdapException
 import org.apache.directory.api.ldap.model.name.Dn
 import org.apache.directory.api.ldap.model.cursor.{
@@ -106,7 +107,7 @@ object ActiveDirectoryClient {
       //we return a tuple of the results from the most recent ldap call
       //and the current client object
 
-      //look at threading oe futures here
+      //look at threading or futures here
 
       val typeMap = Map(
         "users"  -> "(objectclass=user)",
