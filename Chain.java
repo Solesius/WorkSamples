@@ -1,3 +1,6 @@
+//some kind of array thing see https://typelevel.org/cats/datatypes/chain.html
+//also https://algs4.cs.princeton.edu/home/
+
 import java.lang.StackWalker.Option;
 import java.util.Arrays;
 import java.util.Optional;
