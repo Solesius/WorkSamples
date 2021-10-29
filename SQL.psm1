@@ -35,7 +35,7 @@ class SQL {
     [void]
     NotNull
     {
-          if ( !(
+          if ( (
                 $null -ne $this.db  -and 
                 $null -ne $this.server -and
                 $null -ne $this.query)){
