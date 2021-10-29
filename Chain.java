@@ -129,6 +129,8 @@ public class Main {
             return this;
         }
 
+        //get this method working properly, 
+        //bad results. 
         public boolean equals (Object that){
             boolean valid = false;
             Chain<T> _that = ((Chain<T>)that);
