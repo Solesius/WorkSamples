@@ -110,3 +110,27 @@ class SQL {
         return ([System.Collections.Generic.List[DataRow]]$Dataset.Tables.Rows)
     }
 }
+#usage#
+#need to be wary of typical sql injection stuff
+
+#FQDN isn't typically required if shell is running on windows domain machine, 
+#but helps with DNS weirdness
+$sql = [SQL]::new(
+    "SERVER.FQDN\INSTANCE_NAME",
+    "DATABASE_NAME"
+)
+
+$tbl = $sql.ExecuteQuery( "select [username] from users where username = 'JoeSmith1'" )
+
+#maybe you want a lambda for some reason
+#type is also optional for scriptblock
+$func = [scriptblock]{
+    param( [object]$row )
+    [Console]::WriteLine($row.username)
+ }
+$tbl.foreach({
+    $func.invoke($_)
+})
+ 
+#or slighty more to the point
+foreach ($row in $tbl) { [Console]::WriteLine($row.username) }
