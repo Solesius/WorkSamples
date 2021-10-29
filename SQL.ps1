@@ -41,7 +41,7 @@ class SQL {
                 $null -ne $this.query)){
                 }
                 else {
-                  throw [Exception]::new("Cannot execute query with null parameters, ~nset server and/or db and pass in a query before running") 
+                  throw [Exception]::new("Cannot execute query with null parameters, `nset server and/or db and pass in a query before running") 
                 }
     }
     
